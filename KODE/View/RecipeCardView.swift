@@ -40,26 +40,21 @@ struct RecipeCardView: View {
                         .lineLimit(2)
                         .padding()
                     
-                    //                    Text("\(recipe.lastUpdated)")
-                    //                        .foregroundColor(.red)
-                    //                        .font(.body)
-                    //                        .padding()
-                    
                     Spacer()
                     
                 }
                 Spacer()
-            }.background(Color.white)
-                .frame(height: 180, alignment: .bottom)
+            }
+            .background(Color("cardbg"))
+            .frame(height: 180, alignment: .bottom)
             
         }.cornerRadius(20)
-            //            .shadow(radius: 20)
             .onTapGesture {
                 self.show.toggle()
         }
-        //        .sheet(isPresented: self.$show) {
-        //            RecipeView(recipe: self.recipe)
-        //        }
+        .sheet(isPresented: self.$show) {
+            RecipeView(recipe: self.recipe)
+        }
     }
 }
 
