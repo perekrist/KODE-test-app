@@ -9,6 +9,9 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @ObservedObject private var recipeViewModel = RecipeViewModel()
+    
     var body: some View {
         Text("Hello, World!")
     }
