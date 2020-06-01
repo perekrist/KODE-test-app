@@ -14,6 +14,20 @@ class RecipeViewModel: ObservableObject {
     private var url = "https://test.kode-t.ru/recipes.json"
     
     @Published var recipes = [RecipeModel]()
+    @Published var newRecipes = [RecipeModel]()
+    
+    @Published var query = "" {
+           didSet {
+               newRecipes.removeAll()
+               for recipe in recipes {
+                   if recipe.name.contains(query) ||
+                    recipe.description.contains(query) ||
+                    recipe.instructions.contains(query) {
+                       newRecipes.append(recipe)
+                   }
+               }
+           }
+       }
 
     init() {
         getRecipes()
