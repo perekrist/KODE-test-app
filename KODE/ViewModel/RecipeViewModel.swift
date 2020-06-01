@@ -41,7 +41,6 @@ class RecipeViewModel: ObservableObject {
                 id += 1
             }
             
-            print(recipes)
         }
         
     }

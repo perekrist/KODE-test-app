@@ -13,7 +13,11 @@ struct ContentView: View {
     @ObservedObject private var recipeViewModel = RecipeViewModel()
     
     var body: some View {
-        Text("Hello, World!")
+        
+        List(recipeViewModel.recipes) { i in
+            RecipeCardView(recipe: i)
+        }
+        
     }
 }
 

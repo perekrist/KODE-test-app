@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,7 @@
 		CAED2A642485065900024C9B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAED2A622485065900024C9B /* LaunchScreen.storyboard */; };
 		CAED2A6C2485076B00024C9B /* RecipeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAED2A6B2485076B00024C9B /* RecipeModel.swift */; };
 		CAED2A71248507F300024C9B /* RecipeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAED2A70248507F300024C9B /* RecipeViewModel.swift */; };
+		CAED2A7324850C5D00024C9B /* RecipeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAED2A7224850C5D00024C9B /* RecipeCardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		CAED2A652485065900024C9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CAED2A6B2485076B00024C9B /* RecipeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeModel.swift; sourceTree = "<group>"; };
 		CAED2A70248507F300024C9B /* RecipeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewModel.swift; sourceTree = "<group>"; };
+		CAED2A7224850C5D00024C9B /* RecipeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCardView.swift; sourceTree = "<group>"; };
 		D85F394376FBD4DFC5579E85 /* Pods-KODE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KODE.release.xcconfig"; path = "Target Support Files/Pods-KODE/Pods-KODE.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -52,7 +54,6 @@
 				4276AAF21DD2FA249DE20F9D /* Pods-KODE.debug.xcconfig */,
 				D85F394376FBD4DFC5579E85 /* Pods-KODE.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -110,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				CAED2A5B2485065600024C9B /* ContentView.swift */,
+				CAED2A7224850C5D00024C9B /* RecipeCardView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -247,6 +249,7 @@
 			files = (
 				CAED2A582485065600024C9B /* AppDelegate.swift in Sources */,
 				CAED2A6C2485076B00024C9B /* RecipeModel.swift in Sources */,
+				CAED2A7324850C5D00024C9B /* RecipeCardView.swift in Sources */,
 				CAED2A5A2485065600024C9B /* SceneDelegate.swift in Sources */,
 				CAED2A71248507F300024C9B /* RecipeViewModel.swift in Sources */,
 				CAED2A5C2485065600024C9B /* ContentView.swift in Sources */,
