@@ -42,14 +42,15 @@ struct ContentView: View {
             }
             
             if self.recipeViewModel.query == "" {
-                List(recipeViewModel.recipes) { i in
-                    RecipeCardView(recipe: i)
-                }
-            } else {
-                List(recipeViewModel.newRecipes) { i in
-                    RecipeCardView(recipe: i)
+                List(0 ..< recipeViewModel.recipes.count, id: \.self) { i in
+                    RecipeCardView(recipe: self.$recipeViewModel.recipes[i])
                 }
             }
+//            else {
+//                List(recipeViewModel.newRecipes) { i in
+//                    RecipeCardView(recipe: self.$recipeViewModel.recipes[i])
+//                }
+//            }
         }
         .actionSheet(isPresented: $showSortVariants) {
             ActionSheet(title: Text("Sort data by..."), buttons: [

@@ -18,6 +18,9 @@
 		CAED2A71248507F300024C9B /* RecipeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAED2A70248507F300024C9B /* RecipeViewModel.swift */; };
 		CAED2A7324850C5D00024C9B /* RecipeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAED2A7224850C5D00024C9B /* RecipeCardView.swift */; };
 		CAED2A7524850F4000024C9B /* RecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAED2A7424850F4000024C9B /* RecipeView.swift */; };
+		CAED2A7D24868F4500024C9B /* Carousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAED2A7C24868F4500024C9B /* Carousel.swift */; };
+		CAED2A802486902300024C9B /* PageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAED2A7F2486902300024C9B /* PageControl.swift */; };
+		CAED2A822486908700024C9B /* ListCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAED2A812486908700024C9B /* ListCarousel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +38,9 @@
 		CAED2A70248507F300024C9B /* RecipeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewModel.swift; sourceTree = "<group>"; };
 		CAED2A7224850C5D00024C9B /* RecipeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCardView.swift; sourceTree = "<group>"; };
 		CAED2A7424850F4000024C9B /* RecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeView.swift; sourceTree = "<group>"; };
+		CAED2A7C24868F4500024C9B /* Carousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Carousel.swift; sourceTree = "<group>"; };
+		CAED2A7F2486902300024C9B /* PageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControl.swift; sourceTree = "<group>"; };
+		CAED2A812486908700024C9B /* ListCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCarousel.swift; sourceTree = "<group>"; };
 		D85F394376FBD4DFC5579E85 /* Pods-KODE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KODE.release.xcconfig"; path = "Target Support Files/Pods-KODE/Pods-KODE.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -112,9 +118,10 @@
 		CAED2A6D248507B700024C9B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CAED2A7E2486900E00024C9B /* Carousel */,
 				CAED2A5B2485065600024C9B /* ContentView.swift */,
-				CAED2A7224850C5D00024C9B /* RecipeCardView.swift */,
 				CAED2A7424850F4000024C9B /* RecipeView.swift */,
+				CAED2A7224850C5D00024C9B /* RecipeCardView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -133,6 +140,16 @@
 				CAED2A70248507F300024C9B /* RecipeViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CAED2A7E2486900E00024C9B /* Carousel */ = {
+			isa = PBXGroup;
+			children = (
+				CAED2A7C24868F4500024C9B /* Carousel.swift */,
+				CAED2A812486908700024C9B /* ListCarousel.swift */,
+				CAED2A7F2486902300024C9B /* PageControl.swift */,
+			);
+			path = Carousel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,11 +269,14 @@
 			files = (
 				CAED2A582485065600024C9B /* AppDelegate.swift in Sources */,
 				CAED2A6C2485076B00024C9B /* RecipeModel.swift in Sources */,
+				CAED2A802486902300024C9B /* PageControl.swift in Sources */,
+				CAED2A822486908700024C9B /* ListCarousel.swift in Sources */,
 				CAED2A7324850C5D00024C9B /* RecipeCardView.swift in Sources */,
 				CAED2A7524850F4000024C9B /* RecipeView.swift in Sources */,
 				CAED2A5A2485065600024C9B /* SceneDelegate.swift in Sources */,
 				CAED2A71248507F300024C9B /* RecipeViewModel.swift in Sources */,
 				CAED2A5C2485065600024C9B /* ContentView.swift in Sources */,
+				CAED2A7D24868F4500024C9B /* Carousel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
