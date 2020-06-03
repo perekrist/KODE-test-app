@@ -65,7 +65,7 @@ struct RecipeView: View {
                     .foregroundColor(.gray)
                     .font(.body)
                     .padding()
-                    .background(Color.orange)
+                    //.frame(height: 500, alignment: .top)
             }
             
         }
