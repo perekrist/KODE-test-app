@@ -15,8 +15,8 @@ struct RecipeView: View {
     @State var page = 0
     
     var body: some View {
-        VStack {
-            ScrollView(.vertical, showsIndicators: false) {
+        ScrollView(.vertical, showsIndicators: false) {
+            VStack {
                 
                 ZStack {
                     Carousel(recipe: self.recipe, page: self.$page)
@@ -45,14 +45,12 @@ struct RecipeView: View {
                 }
                 
                 HStack {
-                    
                     ForEach(0 ..< recipe.difficulty) {_ in
                         Image(systemName: "star.fill")
                             .resizable()
                             .frame(width: 30, height: 30)
                             .foregroundColor(.yellow)
                     }
-                    
                 }
                 
                 Text("Instruction")
@@ -67,9 +65,9 @@ struct RecipeView: View {
                     .foregroundColor(.gray)
                     .font(.body)
                     .padding()
-                
-                Spacer()
+                    .background(Color.orange)
             }
+            
         }
     }
 }
