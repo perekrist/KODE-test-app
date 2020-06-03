@@ -32,12 +32,21 @@ struct RecipeCardView: View {
                         .shadow(radius: 50)
                         .padding()
                     
-                    Text("\(recipe.description)")
-                        .foregroundColor(.gray)
-                        .font(.body)
-                        .italic()
-                        .lineLimit(2)
-                        .padding()
+                    if recipe.description != "" {
+                        Text("\(recipe.description)")
+                            .foregroundColor(.gray)
+                            .font(.body)
+                            .italic()
+                            .lineLimit(2)
+                            .padding()
+                    } else {
+                        Text("<-- No description -->")
+                            .foregroundColor(.gray)
+                            .font(.body)
+                            .italic()
+                            .lineLimit(2)
+                            .padding()
+                    }
                     
                     Spacer()
                     
