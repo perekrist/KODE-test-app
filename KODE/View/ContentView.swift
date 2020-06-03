@@ -12,6 +12,7 @@ struct ContentView: View {
     
     @ObservedObject private var recipeViewModel = RecipeViewModel()
     @State private var showSortVariants = false
+    @State private var recipe = RecipeModel(id: 0, uuid: "", name: "", images: [], lastUpdated: 0, description: "", instructions: "", difficulty: 0)
     
     var body: some View {
         VStack {
@@ -24,6 +25,18 @@ struct ContentView: View {
                     TextField("Search...", text: $recipeViewModel.query)
                         .padding()
                         .foregroundColor(.white)
+                    if self.recipeViewModel.query != "" {
+                        Button(action: {
+                            self.recipeViewModel.query = ""
+                        }) {
+                            Image(systemName: "xmark.square")
+                                .resizable()
+                                .frame(width: 20, height: 20)
+                                .foregroundColor(.red)
+                                .padding()
+                        }
+                    }
+                    
                 }.background(Color.black.opacity(0.3))
                     .cornerRadius(20)
                     .padding(.horizontal)
@@ -37,20 +50,14 @@ struct ContentView: View {
                         .resizable()
                         .frame(width: 30, height: 30)
                         .padding(.trailing, 15)
-                    
                 }
             }
             
-            if self.recipeViewModel.query == "" {
-                List(0 ..< recipeViewModel.recipes.count, id: \.self) { i in
-                    RecipeCardView(recipe: self.$recipeViewModel.recipes[i])
+            List {
+                ForEach(recipeViewModel.newRecipes) { i in
+                    RecipeCardView(recipe: i)
                 }
             }
-//            else {
-//                List(recipeViewModel.newRecipes) { i in
-//                    RecipeCardView(recipe: self.$recipeViewModel.recipes[i])
-//                }
-//            }
         }
         .actionSheet(isPresented: $showSortVariants) {
             ActionSheet(title: Text("Sort data by..."), buttons: [

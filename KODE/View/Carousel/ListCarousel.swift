@@ -11,7 +11,7 @@ import SDWebImageSwiftUI
 
 struct ListCarousel: View {
     
-    @Binding var recipe: RecipeModel
+    var recipe: RecipeModel
     
     var body: some View {
         HStack(spacing: 0) {

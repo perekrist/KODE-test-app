@@ -10,7 +10,7 @@ import SwiftUI
 
 struct Carousel: UIViewRepresentable {
     
-    @Binding var recipe: RecipeModel
+    var recipe: RecipeModel
     @Binding var page: Int
     
     func makeCoordinator() -> Coordinator {
@@ -29,7 +29,7 @@ struct Carousel: UIViewRepresentable {
         view.showsHorizontalScrollIndicator = false
         view.delegate = context.coordinator
         
-        let view1 = UIHostingController(rootView: ListCarousel(recipe: self.$recipe))
+        let view1 = UIHostingController(rootView: ListCarousel(recipe: self.recipe))
         view1.view.frame = CGRect(x: 0, y: 0, width: total, height: 400)
         view1.view.backgroundColor = .clear
         

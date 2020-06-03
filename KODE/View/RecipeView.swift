@@ -11,7 +11,7 @@ import SDWebImageSwiftUI
 
 struct RecipeView: View {
     
-    @Binding var recipe: RecipeModel
+    var recipe: RecipeModel
     @State var page = 0
     
     var body: some View {
@@ -19,11 +19,11 @@ struct RecipeView: View {
             ScrollView(.vertical, showsIndicators: false) {
                 
                 ZStack {
-                    Carousel(recipe: self.$recipe, page: self.$page)
+                    Carousel(recipe: self.recipe, page: self.$page)
                     
                     VStack {
                         Spacer()
-                        PageControl(page: self.$page, recipe: self.$recipe)
+                        PageControl(page: self.$page, recipe: self.recipe)
                             .padding(.vertical, 20)
                     }
                 }

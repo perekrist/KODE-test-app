@@ -11,7 +11,7 @@ import SDWebImageSwiftUI
 
 struct RecipeCardView: View {
     
-    @Binding var recipe: RecipeModel
+    var recipe: RecipeModel
     @State private var show = false
     
     var body: some View {
@@ -52,7 +52,7 @@ struct RecipeCardView: View {
                 self.show.toggle()
         }
         .sheet(isPresented: self.$show) {
-            RecipeView(recipe: self.$recipe)
+            RecipeView(recipe: self.recipe)
         }
     }
 }

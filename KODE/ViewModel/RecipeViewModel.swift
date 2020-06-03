@@ -11,24 +11,33 @@ import Alamofire
 import SwiftyJSON
 
 class RecipeViewModel: ObservableObject {
+    
+    private var timer: Timer?
     private var url = "https://test.kode-t.ru/recipes.json"
     
     @Published var recipes = [RecipeModel]()
     @Published var newRecipes = [RecipeModel]()
     
     @Published var query = "" {
-           didSet {
-               newRecipes.removeAll()
-               for recipe in recipes {
-                   if recipe.name.contains(query) ||
-                    recipe.description.contains(query) ||
-                    recipe.instructions.contains(query) {
-                       newRecipes.append(recipe)
-                   }
-               }
-           }
-       }
-
+        didSet {
+            timer?.invalidate()
+            timer = Timer.scheduledTimer(withTimeInterval: 1.5, repeats: false, block: { (_) in
+                if self.query != "" {
+                    self.newRecipes.removeAll()
+                    for recipe in self.recipes {
+                        if recipe.name.contains(self.query) ||
+                            recipe.description.contains(self.query) ||
+                            recipe.instructions.contains(self.query) {
+                            self.newRecipes.append(recipe)
+                        }
+                    }
+                } else {
+                    self.newRecipes = self.recipes
+                }
+            })
+        }
+    }
+    
     init() {
         getRecipes()
     }
@@ -43,18 +52,18 @@ class RecipeViewModel: ObservableObject {
             var id = 0
             for i in recipes {
                 let recipe = RecipeModel(id: id,
-                                    uuid: i.1["uuid"].stringValue,
-                                    name: i.1["name"].stringValue,
-                                    images: i.1["images"].arrayObject as! [String],
-                                    lastUpdated: i.1["lastUpdated"].intValue,
-                                    description: i.1["description"].stringValue,
-                                    instructions: i.1["instructions"].stringValue,
-                                    difficulty: i.1["difficulty"].intValue)
-                    
+                                         uuid: i.1["uuid"].stringValue,
+                                         name: i.1["name"].stringValue,
+                                         images: i.1["images"].arrayObject as! [String],
+                                         lastUpdated: i.1["lastUpdated"].intValue,
+                                         description: i.1["description"].stringValue,
+                                         instructions: i.1["instructions"].stringValue,
+                                         difficulty: i.1["difficulty"].intValue)
+                
                 self.recipes.append(recipe)
                 id += 1
             }
-            
+            self.newRecipes = self.recipes
         }
         
     }

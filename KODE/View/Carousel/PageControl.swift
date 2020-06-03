@@ -11,7 +11,7 @@ import SwiftUI
 struct PageControl: UIViewRepresentable {
     
     @Binding var page: Int
-    @Binding var recipe: RecipeModel
+    var recipe: RecipeModel
     
     func makeUIView(context: Context) -> UIPageControl {
         
