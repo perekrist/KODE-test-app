@@ -61,37 +61,17 @@ struct ContentView: View {
         }
         .actionSheet(isPresented: $showSortVariants) {
             ActionSheet(title: Text("Sort data by..."), buttons: [
-                .default(Text("Name up")) {
-                    self.recipeViewModel.recipes.sort {
-                        $0.name < $1.name
-                    }
-                    self.recipeViewModel.newRecipes.sort {
-                        $0.name < $1.name
-                    }
+                .default(Text("Name ascending")) {
+                    self.recipeViewModel.nameAscending()
                 },
-                .default(Text("Name down")) {
-                    self.recipeViewModel.recipes.sort {
-                        $0.name > $1.name
-                    }
-                    self.recipeViewModel.newRecipes.sort {
-                        $0.name > $1.name
-                    }
+                .default(Text("Name descending")) {
+                    self.recipeViewModel.nameDescending()
                 },
-                .default(Text("Last updated data up")) {
-                    self.recipeViewModel.recipes.sort {
-                        $0.lastUpdated < $1.lastUpdated
-                    }
-                    self.recipeViewModel.newRecipes.sort {
-                        $0.lastUpdated < $1.lastUpdated
-                    }
+                .default(Text("Last updated ascending")) {
+                    self.recipeViewModel.updateAscending()
                 },
-                .default(Text("Last updated data down")) {
-                    self.recipeViewModel.recipes.sort {
-                        $0.lastUpdated > $1.lastUpdated
-                    }
-                    self.recipeViewModel.newRecipes.sort {
-                        $0.lastUpdated > $1.lastUpdated
-                    }
+                .default(Text("Last updated descending")) {
+                    self.recipeViewModel.updateDescending()
                 },
                 .cancel()
             ])

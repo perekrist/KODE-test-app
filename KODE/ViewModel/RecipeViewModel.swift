@@ -57,7 +57,7 @@ class RecipeViewModel: ObservableObject {
                                          images: i.1["images"].arrayObject as! [String],
                                          lastUpdated: i.1["lastUpdated"].intValue,
                                          description: i.1["description"].stringValue,
-                                         instructions: self.regex(text: i.1["instructions"].stringValue),
+                                         instructions: self.filterHTMLLineBreaks(text: i.1["instructions"].stringValue),
                                          difficulty: i.1["difficulty"].intValue)
                 
                 self.recipes.append(recipe)
@@ -68,11 +68,49 @@ class RecipeViewModel: ObservableObject {
         
     }
     
-    private func regex(text: String) -> String {
+    private func filterHTMLLineBreaks(text: String) -> String {
         if text.contains("<br>") {
             return text.replacingOccurrences(of: "<br>", with: "\n", options: .literal, range: nil)
         }
         return text
     }
+    
+    public func nameAscending() {
+        recipes.sort {
+            $0.name < $1.name
+        }
+        newRecipes.sort {
+            $0.name < $1.name
+        }
+    }
+    
+    public func nameDescending() {
+        recipes.sort {
+            $0.name > $1.name
+        }
+        newRecipes.sort {
+            $0.name > $1.name
+        }
+    }
+    
+    public func updateAscending() {
+        recipes.sort {
+            $0.lastUpdated < $1.lastUpdated
+        }
+        newRecipes.sort {
+            $0.lastUpdated < $1.lastUpdated
+        }
+    }
+    
+    public func updateDescending() {
+        recipes.sort {
+            $0.lastUpdated > $1.lastUpdated
+        }
+        newRecipes.sort {
+            $0.lastUpdated > $1.lastUpdated
+        }
+    }
+    
+    
 }
 
